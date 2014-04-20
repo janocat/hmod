@@ -30,5 +30,5 @@ public abstract class AlgorithmInterfaceFactory
         return null;
     }
     
-    public abstract AlgorithmInterface createInterface();
+    public abstract AlgorithmInterface createInterface(String algorithmName);
 }

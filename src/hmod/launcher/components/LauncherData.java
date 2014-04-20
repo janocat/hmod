@@ -1,7 +1,7 @@
 
 package hmod.launcher.components;
 
-import hmod.core.DataInterface;
+import hmod.core.DataHandler;
 import hmod.parser.AlgorithmParser;
 import optefx.util.output.DefaultOutputConfigBuilder;
 
@@ -9,7 +9,7 @@ import optefx.util.output.DefaultOutputConfigBuilder;
  *
  * @author Enrique Urra C.
  */
-public interface LauncherData extends DataInterface
+public interface LauncherData extends DataHandler
 {    
     void setParserFactoryTypes(Class[] types);
     Class[] getParserFactoryTypes();

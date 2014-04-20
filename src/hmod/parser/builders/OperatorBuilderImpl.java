@@ -10,7 +10,7 @@ import flexbuilders.core.BuildStateInfo;
 import flexbuilders.core.Buildable;
 import flexbuilders.core.DefaultStateInfo;
 import flexbuilders.core.StackBuildable;
-import hmod.core.DataInterface;
+import hmod.core.DataHandler;
 import hmod.core.Operator;
 
 /**
@@ -30,13 +30,13 @@ class OperatorBuilderImpl<T extends Operator> extends StackBuildable<T> implemen
     }
 
     @Override
-    public OperatorBuilder injectData(Buildable<? extends DataInterface> data) throws BuildException
+    public OperatorBuilder injectData(Buildable<? extends DataHandler> data) throws BuildException
     {
         return injectData(beanSetter(), data);
     }
 
     @Override
-    public OperatorBuilder injectData(Buildable<? extends Setter> setter, Buildable<? extends DataInterface> dataImpl) throws BuildException
+    public OperatorBuilder injectData(Buildable<? extends Setter> setter, Buildable<? extends DataHandler> dataImpl) throws BuildException
     {
         setterInvokerBuilder.set(setter, dataImpl);
         return this;

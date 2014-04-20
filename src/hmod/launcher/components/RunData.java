@@ -1,7 +1,7 @@
 
 package hmod.launcher.components;
 
-import hmod.core.DataInterface;
+import hmod.core.DataHandler;
 import hmod.launcher.RunManager;
 import hmod.launcher.running.AlgorithmInterfaceFactory;
 import hmod.launcher.running.AlgorithmRunnerFactory;
@@ -10,7 +10,7 @@ import hmod.launcher.running.AlgorithmRunnerFactory;
  *
  * @author Enrique Urra C.
  */
-public interface RunData extends DataInterface
+public interface RunData extends DataHandler
 {
     void setThreading(boolean threading);
     boolean getThreading();

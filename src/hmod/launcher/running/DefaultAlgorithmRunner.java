@@ -17,18 +17,18 @@ class DefaultAlgorithmRunner extends AlgorithmRunner
     {
         try
         {
-            OutputManager.println(Launcher.OUT_COMMON, "Starting execution...");
+            OutputManager.println(OutputManager.DEFAULT_ID, "Starting execution...");
             long start = System.currentTimeMillis();
 
             algorithm.start();
 
             long end = System.currentTimeMillis();
-            OutputManager.println(Launcher.OUT_COMMON, "Execution Finished (total time: " + ((end - start) / 1000.0f) + "s).");
+            OutputManager.println(OutputManager.DEFAULT_ID, "Execution Finished (total time: " + ((end - start) / 1000.0f) + "s).");
         }
         catch(AlgorithmException ex)
         {
-            OutputManager.print(Launcher.OUT_ERROR, "Algorithm Error: ");
-            ex.printStackTrace(OutputManager.getCurrent().getOutput(Launcher.OUT_ERROR));
+            OutputManager.print(OutputManager.DEFAULT_ERROR_ID, "Algorithm Error: ");
+            ex.printStackTrace(OutputManager.getCurrent().getOutput(OutputManager.DEFAULT_ERROR_ID));
         }
     }
 }

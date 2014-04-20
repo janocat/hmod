@@ -36,10 +36,10 @@ public class WindowedAlgorithmInterfaceFactory extends AlgorithmInterfaceFactory
     }
     
     @Override
-    public AlgorithmInterface createInterface()
+    public AlgorithmInterface createInterface(String algName)
     {        
         return new WindowedAlgorithmInterface(
-            //launcherHandler.getStartId(), 
+            algName, 
             runHandler.getThreading(), 
             windowsHandler.getWindowAutoClose());
     }

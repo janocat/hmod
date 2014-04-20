@@ -16,17 +16,15 @@ class WindowedAlgorithmInterface extends JDialog implements AlgorithmInterface
 {
     private AlgorithmFrameWriter writer;
     private Algorithm algorithm;
-    //private Thread algorithmThread;
-    //private Thread listenerThread;
     private boolean autoClose;
     private boolean closed;
     
-    public WindowedAlgorithmInterface(/*String id, */boolean threading, boolean autoClose)
+    public WindowedAlgorithmInterface(String name, boolean threading, boolean autoClose)
     {        
         initComponents();
         DefaultCaret caret = (DefaultCaret)jTextArea1.getCaret();
         caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);        
-        //setTitle("Algorithm execution - id '" + id + "'");
+        setTitle("Algorithm execution: '" + name + "'");
         
         if(!threading)
             setModalityType(ModalityType.APPLICATION_MODAL);

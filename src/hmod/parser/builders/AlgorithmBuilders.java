@@ -21,6 +21,11 @@ public class AlgorithmBuilders
         return new OperatorBuilderImpl<>(opType);
     }
     
+    public static DataProxyBuilder dataProxy() throws BuildException
+    {
+        return new DataProxyBuilderImpl();
+    }
+    
     public static <T extends DeciderInput & DeciderOutput> T deciderStep() throws BuildException
     {
         return (T) new DeciderDelegateImpl();

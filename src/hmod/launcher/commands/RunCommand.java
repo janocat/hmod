@@ -14,6 +14,7 @@ import hmod.launcher.running.AlgorithmRunner;
 import hmod.parser.AlgorithmParserException;
 import optefx.util.output.DefaultOutputConfigBuilder;
 import optefx.util.output.OutputConfig;
+import optefx.util.output.OutputManager;
 import optefx.util.random.RandomTool;
 
 /**
@@ -22,8 +23,9 @@ import optefx.util.random.RandomTool;
  */
 @CommandInfo(
     word="run",
-    usage="run",
-    description="Runs the currently assembled algorithm."
+    usage="run [name]",
+    description="Runs the currently assembled algorithm.\n"
+        + "name: An optional name for the executed algorithm."
 )
 public class RunCommand extends Command
 {
@@ -49,6 +51,11 @@ public class RunCommand extends Command
     @Override
     public void executeCommand(String[] args) throws LauncherException
     {      
+        String name = "(no name)";
+        
+        if(args.length > 0)
+            name = args[0];
+        
         AlgorithmParser parser = launcherHandler.getParser();
         Algorithm algorithm;
 
@@ -65,13 +72,18 @@ public class RunCommand extends Command
         }
            
         AlgorithmRunner runner = runHandler.getRunManager().getCurrentRunnerFactory().createRunner();
-        AlgorithmInterface ui = runHandler.getRunManager().getCurrentInterfaceFactory().createInterface();
+        AlgorithmInterface ui = runHandler.getRunManager().getCurrentInterfaceFactory().createInterface(name);
         
         DefaultOutputConfigBuilder outputConfigBuilder = launcherHandler.getOutputConfigBuilder();
         ui.configOutputs(outputConfigBuilder);
         
         Thread algorithmThread = runner.getAlgorithmThread();
-        OutputConfig outputConfig = outputConfigBuilder.build();
+        
+        OutputConfig outputConfig = outputConfigBuilder.
+            addSystemOutputId(OutputManager.DEFAULT_ID).
+            addSystemErrorOutputId(OutputManager.DEFAULT_ERROR_ID).
+            build();
+        
         launcherHandler.setOutputConfigBuilder(new DefaultOutputConfigBuilder());
         long randomSeed = randomHandler.getSeed();
 

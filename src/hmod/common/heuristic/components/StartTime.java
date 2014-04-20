@@ -1,5 +1,5 @@
 
-package hmod.core.components;
+package hmod.common.heuristic.components;
 
 import hmod.core.Operator;
 import hmod.core.AlgorithmException;

@@ -13,7 +13,7 @@ package hmod.launcher.running;
 public class DefaultAlgorithmInterfaceFactory extends AlgorithmInterfaceFactory
 {
     @Override
-    public AlgorithmInterface createInterface()
+    public AlgorithmInterface createInterface(String algName)
     {
         return new DefaultAlgorithmInterface();
     }

@@ -1,5 +1,5 @@
 
-package hmod.core.components;
+package hmod.common.heuristic.components;
 
 import hmod.core.BooleanOperator;
 
@@ -7,7 +7,7 @@ import hmod.core.BooleanOperator;
  *
  * @author Enrique Urra C.
  */
-public class CheckMaxTime extends BooleanOperator
+public class UpdateTimeElapsed extends BooleanOperator
 {
     protected TimeElapsedData timeElapsedHandler;
 

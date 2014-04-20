@@ -14,12 +14,12 @@ import java.util.Map;
  */
 public final class DataObjectProxy
 {
-    public static DataInterface createFor(Class<? extends DataInterface>... dataInterfaceTypes)
+    public static DataHandler createFor(Class<? extends DataHandler>... dataInterfaceTypes)
     {
         if(dataInterfaceTypes == null || dataInterfaceTypes.length == 0)
             throw new IllegalArgumentException("At least one valid data interface must be provided");
         
-        return (DataInterface)Proxy.newProxyInstance(
+        return (DataHandler)Proxy.newProxyInstance(
             dataInterfaceTypes[0].getClassLoader(),
             dataInterfaceTypes,
             new DataObjectProxyHandler()

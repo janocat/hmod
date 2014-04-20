@@ -27,8 +27,7 @@ public class Launcher
     public static void main(String[] args) throws AlgorithmException, AlgorithmParserException, LauncherException
     {
         OutputManager.getCurrent().setOutputsFromConfig(
-            new DefaultOutputConfigBuilder().addSystemOutput(OUT_COMMON).makePermanent(OUT_COMMON).
-                addSystemErrorOutput(OUT_ERROR).makePermanent(OUT_ERROR).
+            new DefaultOutputConfigBuilder().addSystemOutputId(OUT_COMMON).makePermanent(OUT_COMMON).addSystemErrorOutputId(OUT_ERROR).makePermanent(OUT_ERROR).
                 build()
         );
         
@@ -70,7 +69,7 @@ public class Launcher
         parser.load("hmod.launcher.scripts.MainScript");
         parser.load("hmod.launcher.scripts.MainDataScript");
         parser.load("hmod.launcher.scripts.ConfigScript");
-        parser.load("hmod.parser.builders.SetStartIdScript", "consoleLauncher_main");
+        parser.load("hmod.common.heuristic.scripts.SetStartIdScript", "consoleLauncher_main");
         BuildScriptLibrary classPathLib;
         
         try

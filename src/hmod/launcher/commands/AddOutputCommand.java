@@ -34,7 +34,7 @@ public class AddOutputCommand extends Command
         if(args.length < 1)
             throw new LauncherException("Usage: " + getUsage());
         
-        launcherHandler.getOutputConfigBuilder().addSystemOutput(args[0]);
+        launcherHandler.getOutputConfigBuilder().addSystemOutputId(args[0]);
         OutputManager.println(Launcher.OUT_COMMON, "System output '" + args[0] + "' enabled.");
     }
 }

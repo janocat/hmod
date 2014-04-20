@@ -1,7 +1,7 @@
 
 package hmod.launcher.components;
 
-import hmod.core.DataInterface;
+import hmod.core.DataHandler;
 import hmod.launcher.Command;
 import hmod.launcher.CommandParser;
 import hmod.launcher.CommandRegister;
@@ -12,7 +12,7 @@ import hmod.launcher.CommandExecInfo;
  *
  * @author Enrique Urra C.
  */
-public interface CommandData extends DataInterface
+public interface CommandData extends DataHandler
 {    
     void setCommands(Command[] cmds);
     Command[] getCommands();

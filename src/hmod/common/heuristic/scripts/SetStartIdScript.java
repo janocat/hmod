@@ -1,9 +1,10 @@
 
-package hmod.parser.builders;
+package hmod.common.heuristic.scripts;
 
 import flexbuilders.core.BuildException;
 import flexbuilders.scripting.BuildScript;
 import flexbuilders.tree.TreeHandler;
+import hmod.parser.builders.AlgorithmBuilder;
 
 /**
  *

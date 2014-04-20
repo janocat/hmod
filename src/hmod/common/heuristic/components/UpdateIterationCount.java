@@ -1,5 +1,5 @@
 
-package hmod.core.components;
+package hmod.common.heuristic.components;
 
 import hmod.core.BooleanOperator;
 
@@ -9,7 +9,7 @@ import hmod.core.BooleanOperator;
  * below the maximum value specified.
  * @author Enrique Urra C.
  */
-public class CheckMaxIteration extends BooleanOperator
+public class UpdateIterationCount extends BooleanOperator
 {
     protected IterationData iterationHandler;
     

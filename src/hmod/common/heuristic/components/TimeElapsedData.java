@@ -1,13 +1,13 @@
 
-package hmod.core.components;
+package hmod.common.heuristic.components;
 
-import hmod.core.DataInterface;
+import hmod.core.DataHandler;
 
 /**
  *
  * @author Enrique Urra C.
  */
-public interface TimeElapsedData extends DataInterface
+public interface TimeElapsedData extends DataHandler
 {
     void setInitTime(double time);
     double getInitTime();
