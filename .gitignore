@@ -19,5 +19,5 @@ nbproject/
 
 build.xml
 
-/hmod/loader/sax/
-/hmod/domains/
+/src/hmod/loader/sax/
+/src/hmod/domains/
