@@ -21,4 +21,5 @@ nbproject/
 build.xml
 
 /src/hmod/loader/sax/
-/src/hmod/domai
+/src/hmod/domains
+manifest.mf
