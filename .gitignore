@@ -15,5 +15,6 @@ nbproject/
 *.jar
 *.war
 *.ear
-/dist/
 /build/
+
+build.xml
